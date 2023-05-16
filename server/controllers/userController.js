@@ -37,7 +37,6 @@ class UserController {
   }
   
   async login(req, res, next) {
-    console.log(req.body);
     const { email, password } = req.body;
     const user = await db.query(`select * from public.user where email=$1`, [
       email,
